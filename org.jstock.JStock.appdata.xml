@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>org.jstock.JStock</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0</project_license>
+  <name>JStock</name>
+  <summary>Make Stock Investment Easy</summary>
+  <description>
+    <p>
+      Stock makes it easy to track your stock investment. It provides well organized stock market information, to help
+      you decide your best investment strategy.
+    </p>
+  </description>
+  <launchable type="desktop-id">org.jstock.JStock.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://jstock.org/images/features/country-b.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://jstock.org/images/features/realtime-b.png</image>
+    </screenshot>
+  </screenshots>
+  <url type="homepage">https://jstock.org/</url>
+  <developer_name>Yan Cheng Cheok</developer_name>
+  <update_contact>yccheok@yahoo.com</update_contact>
+  <content_rating type="oars-1.1">
+    <content_attribute id="money-purchasing">mild</content_attribute>
+    <content_attribute id="money-gambling">mild</content_attribute>
+  </content_rating>
+  <releases>
+    <release date="2020-01-23" version="1.0.7.44" />
+  </releases>
+</component>

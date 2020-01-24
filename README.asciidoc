@@ -1,0 +1,24 @@
+= JStock
+:uri-jstock-home: https://jstock.org/
+
+{uri-jstock-home}[JStock^] makes it easy to track your stock investment.
+
+== Build, Install and Run Flatpak (locally)
+
+Assuming `flatpak`, `flatpak-builder`, and `git` are installed, then execute the following commands:
+
+[source,shell]
+----
+$ git clone https://github.com/flathub/org.jstock.JStock.git
+$ cd org.jstock.JStock/
+$ flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+$ flatpak-builder build --force-clean --install-deps-from=flathub --install --user org.jstock.JStock.json
+
+# ...to uninstall the artifact
+$ flatpak uninstall --delete-data --user org.jstock.JStock
+
+# ...and to clean-up everything
+$ rm --force --recursive .flatpak-builder/ build/
+$ flatpak uninstall --unused --user
+$ flatpak remote-delete --user flathub
+----

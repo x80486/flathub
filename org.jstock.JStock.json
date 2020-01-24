@@ -1,0 +1,61 @@
+{
+  "app-id": "org.jstock.JStock",
+  "command": "jstock",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "19.08",
+  "sdk": "org.freedesktop.Sdk",
+  "sdk-extensions": [
+    "org.freedesktop.Sdk.Extension.openjdk8"
+  ],
+  "separate-locales": false,
+  "finish-args": [
+    "--device=dri",
+    "--env=JAVA_HOME=/app/jre/",
+    "--env=PATH=/app/jre/bin/:/usr/bin/:/app/bin/",
+    "--filesystem=home",
+    "--share=ipc",
+    "--share=network",
+    "--socket=wayland",
+    "--socket=x11",
+    "--talk-name=org.freedesktop.Notifications"
+  ],
+  "modules": [
+    {
+      "name": "openjdk",
+      "buildsystem": "simple",
+      "build-commands": ["/usr/lib/sdk/openjdk8/install.sh"]
+    }, {
+      "name": "jstock",
+      "buildsystem": "simple",
+      "build-commands": [
+        "unzip jstock.zip -d /app/",
+        "chmod a+x /app/jstock/jstock.sh",
+        "install -D --mode=0755 entrypoint.sh /app/bin/jstock",
+        "install -D --mode=0644 --target-directory=/app/share/applications/ org.jstock.JStock.desktop",
+        "install -D --mode=0644 --target-directory=/app/share/icons/hicolor/64x64/apps/ org.jstock.JStock.png",
+        "install -D --mode=0644 --target-directory=/app/share/icons/hicolor/128x128/apps/ org.jstock.JStock.png",
+        "install -D --mode=0644 --target-directory=/app/share/metainfo/ org.jstock.JStock.appdata.xml"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "dest-filename": "jstock.zip",
+          "sha256": "23b9409527d799c588638b5bbd6e2963abeb4414b7b16e3d070557134878dfa9",
+          "url": "https://github.com/yccheok/jstock/releases/download/release_1-0-7-44/jstock-1.0.7.44-bin.zip"
+        }, {
+          "type": "file",
+          "path": "org.jstock.JStock.appdata.xml"
+        }, {
+          "type": "file",
+          "path": "org.jstock.JStock.desktop"
+        }, {
+          "type": "file",
+          "path": "org.jstock.JStock.png"
+        }, {
+          "type": "file",
+          "path": "entrypoint.sh"
+        }
+      ]
+    }
+  ]
+}

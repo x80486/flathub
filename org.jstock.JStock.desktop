@@ -1,0 +1,11 @@
+[Desktop Entry]
+Categories=Office;Finance;
+Exec=jstock
+GenericName=JStock
+Icon=org.jstock.JStock
+Keywords=finance;news;portfolio;stock-market;stocks;watchlist;
+Name=JStock
+Terminal=false
+Type=Application
+StartupNotify=true
+StartupWMClass=yccheok-jstock
