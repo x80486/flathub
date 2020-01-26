@@ -1,0 +1,24 @@
+= Gnonograms
+:uri-gnonograms-home: https://github.com/jeremypw/gnonograms/
+
+{uri-gnonograms-home}[Gnonograms^] is a `Nonogram` puzzle game written in Vala/Gtk.
+
+== Build, Install and Run Flatpak (locally)
+
+Assuming `flatpak`, `flatpak-builder`, and `git` are installed, execute the following commands:
+
+[source,shell]
+----
+$ git clone https://github.com/flathub/com.github.jeremypw.gnonograms.git
+$ cd com.github.jeremypw.gnonograms/
+$ flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+$ flatpak-builder build --force-clean --install-deps-from=flathub --install --user com.github.jeremypw.gnonograms.json
+
+# ...to uninstall the artifact
+$ flatpak uninstall --delete-data --user com.github.jeremypw.gnonograms
+
+# ...and to clean-up everything
+$ rm --force --recursive .flatpak-builder/ build/
+$ flatpak uninstall --unused --user
+$ flatpak remote-delete --user flathub
+----

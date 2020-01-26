@@ -1,0 +1,30 @@
+{
+  "app-id": "com.github.jeremypw.gnonograms",
+  "base": "io.elementary.BaseApp",
+  "base-version": "juno-19.08",
+  "command": "com.github.jeremypw.gnonograms",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "3.34",
+  "sdk": "org.gnome.Sdk",
+  "finish-args": [
+    "--device=dri",
+    "--socket=fallback-x11",
+    "--share=ipc",
+    "--socket=wayland"
+  ],
+  "modules": [
+    {
+      "name": "gnonograms",
+      "buildsystem": "meson",
+      "config-opts": ["--buildtype=release"],
+      "sources": [
+        {
+          "type": "git",
+          "commit": "d9e8912b4855911ca0cbd42b0dead3bdba557f15",
+          "tag": "v1.4.3",
+          "url": "git://github.com/jeremypw/gnonograms.git"
+        }
+      ]
+    }
+  ]
+}
