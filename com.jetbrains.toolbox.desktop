@@ -1,0 +1,15 @@
+[Desktop Entry]
+# REQUIRED
+Name=JetBrains Toolbox
+Type=Application
+# OPTIONAL
+Categories=Settings;PackageManager;
+Comment=A Control Panel for Your Tools and Projects
+Exec=jetbrains-toolbox
+Icon=com.jetbrains.toolbox
+Keywords=development;management;toolbox;
+MimeType=x-scheme-handler/jetbrains;
+StartupNotify=false
+StartupWMClass=jetbrains-toolbox
+Terminal=false
+Version=1.0

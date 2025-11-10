@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <content_rating type="oars-1.1" />
+  <description>
+    <p>
+      JetBrains Toolbox App is a lightweight desktop manager that centralizes installation, updates,
+      and launch of JetBrains IDEs and related tools. It provides a single, consistent entry point
+      for discovering JetBrains products, installing specific versions, and keeping them up to date
+      without manual downloads or package juggling.
+    </p>
+    <p>
+      It handles license sign-in and activation, shows release notes, and preserves per-IDE settings
+      and plugins when switching versions.
+    </p>
+    <p>
+      The Toolbox App makes multi-version workflows simple: you can install and run several versions
+      of the same IDE side by side (stable, EAP, or older builds), pin versions for reproducible
+      workspaces, and roll back to a previous build if an update causes issues.
+    </p>
+    <p>Key practical benefits for users:</p>
+    <ul>
+      <li>Centralized management of all JetBrains tools and versions</li>
+      <li>Easy installation of EAP and ARM64 builds where available</li>
+      <li>Safe, atomic updates and convenient rollbacks</li>
+      <li>Integration with JetBrains licensing and account sign-in</li>
+      <li>Remote development support (Toolbox Agent + host management)</li>
+      <li>Project-centric launchers and unified URL handling</li>
+      <li>Configurable update and proxy settings suited to corporate or offline environments</li>
+    </ul>
+    <p>**NOTE: This wrapper is not verified by, affiliated with, or supported by JetBrains s.r.o.**</p>
+  </description>
+  <developer_name>JetBrains s.r.o.</developer_name>
+  <id>com.jetbrains.toolbox</id>
+  <launchable type="desktop-id">com.jetbrains.toolbox.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>JetBrains Toolbox</name>
+  <project_license>LicenseRef-proprietary</project_license>
+  <releases>
+    <release version="3.0.1" date="2025-10-26">
+      <description />
+    </release>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <caption>JetBrains Toolbox App</caption>
+      <image>https://www.jetbrains.com/toolbox-app/img/1_en-us.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Maintain Multiple Versions Side by Side</caption>
+      <image>https://www.jetbrains.com/toolbox-app/img/3a_en-us.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Open Projects Instantly</caption>
+      <image>https://www.jetbrains.com/toolbox-app/img/4a_en-us.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Remote IDE Management</caption>
+      <image>https://www.jetbrains.com/toolbox-app/img/6b_en-us.png</image>
+    </screenshot>
+  </screenshots>
+  <summary>Manage Your IDEs the Easy Way</summary>
+  <update_contact>toolbox-support@jetbrains.com</update_contact>
+  <url type="bugtracker">https://youtrack.jetbrains.com/issues/TBX/</url>
+  <url type="homepage">https://www.jetbrains.com/toolbox-app/</url>
+</component>

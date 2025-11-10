@@ -1,0 +1,54 @@
+app-id: com.jetbrains.toolbox
+command: jetbrains-toolbox
+finish-args:
+  - --filesystem=xdg-run/keyring
+  - --share=ipc
+  - --share=network
+  - --socket=ssh-auth
+  - --socket=x11
+  - --talk-name=org.freedesktop.secrets
+  # [start] Experimental
+  - --talk-name=com.canonical.AppMenu.Registrar
+  # [end]
+modules:
+  - name: jetbrains-toolbox
+    build-commands:
+      - install -D -m 755 post-install-setup.sh /app/bin/apply_extra
+      - install -D -m 755 entrypoint.sh /app/bin/jetbrains-toolbox
+      - install -D -m 644 -t /app/share/applications/ ${FLATPAK_ID}.desktop
+      - install -D -m 644 -t /app/share/metainfo/ ${FLATPAK_ID}.metainfo.xml
+      - install -D -m 644 -t /app/share/icons/hicolor/scalable/apps/ ${FLATPAK_ID}.svg
+    buildsystem: simple
+    sources:
+      - type: extra-data
+        filename: jetbrains-toolbox.tar.gz
+        only-arches: # TODO: Add aarch64 once this is working and published
+          - x86_64
+        sha256: cb5c24c4ee54df9e5634de61eba4168b245952a0e459b9ac530d198385604bcb
+        size: 129114392
+        url: https://download.jetbrains.com/toolbox/jetbrains-toolbox-3.0.1.59888.tar.gz
+        x-checker-data:
+          code: TBA
+          is-main-source: true
+          type: jetbrains
+      - type: file
+        path: com.jetbrains.toolbox.desktop
+      - type: file
+        path: com.jetbrains.toolbox.metainfo.xml
+      - type: file
+        path: com.jetbrains.toolbox.svg
+      - type: script
+        commands:
+          - exec "/app/extra/bin/jetbrains-toolbox" "$@"
+        dest-filename: entrypoint.sh
+      - type: script
+        commands:
+          - bsdtar -x -f jetbrains-toolbox.tar.gz --strip-components=1
+          - rm jetbrains-toolbox.tar.gz
+        dest-filename: post-install-setup.sh
+runtime: org.freedesktop.Sdk
+runtime-version: "25.08"
+sdk: org.freedesktop.Sdk
+separate-locales: false
+tags:
+  - proprietary
